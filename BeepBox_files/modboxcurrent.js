@@ -1271,6 +1271,7 @@ var beepbox;
             buffer.push(base64IntToCharCode[digits.length]);
             Array.prototype.push.apply(buffer, digits);
             bits.encodeBase64(base64IntToCharCode, buffer);
+ 	    const maxApplyArgs = 64555;
             if (buffer.length >= 65535)
                 throw new Error("Song hash code too long.");
             return String.fromCharCode.apply(null, buffer);
